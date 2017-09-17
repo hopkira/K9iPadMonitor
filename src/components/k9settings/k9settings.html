@@ -1,0 +1,35 @@
+<!-- Generated template for the K9settingsComponent component -->
+<div>
+<h3>Node-RED URL:</h3>
+<h4>http://{{K9settings.URL}}:{{K9settings.port}}{{getFiller(K9settings.dir)}}{{K9settings.dir}}/</h4>
+
+<form (ngSubmit)="connect(K9settings)">
+
+<ion-list inset>
+
+  <ion-item>
+    <ion-label stacked>K9 Base URL</ion-label>
+    <ion-input type="text" [(ngModel)]="K9settings.URL" name="URL" autocorrect="off" placeholder="Please enter K9 web server e.g. www.k9.com"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Node-RED base directory</ion-label>
+    <ion-input type="text" [(ngModel)]="K9settings.dir" name="dir" autocorrect="off" placeholder="Please enter node-RED directory e.g. admin"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Node-RED Port Number</ion-label>
+    <ion-input type="number" [(ngModel)]="K9settings.port" name="port" placeholder="Please enter node-RED port number e.g. 1880"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked>Password</ion-label>
+    <ion-input type="password" [(ngModel)]="K9settings.password" name="password" placeholder="Please enter password to use K9"></ion-input>
+  </ion-item>
+
+ <div padding>
+    <button ion-button type="submit" block>Save and Connect</button>
+</div>
+</ion-list>
+</form>
+</div>
